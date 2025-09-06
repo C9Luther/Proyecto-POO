@@ -1,0 +1,14 @@
+// Herencia de Persona
+public class Usuario extends Persona {
+    private int codigoUsuario;
+
+    public Usuario(String nombre, String apellido, int codigoUsuario) {
+        super(nombre, apellido);
+        this.codigoUsuario = codigoUsuario;
+    }
+
+    @Override
+    public String mostrarInfo() {
+        return "Usuario: " + super.mostrarInfo() + " | Código: " + codigoUsuario;
+    }
+}
