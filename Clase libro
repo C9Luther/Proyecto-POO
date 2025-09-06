@@ -1,0 +1,23 @@
+public class Libro {
+    private String titulo;
+    private Autor autor; // Asociación: un libro tiene un autor
+    private boolean disponible;
+
+    public Libro(String titulo, Autor autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.disponible = true;
+    }
+
+    public String getTitulo() { return titulo; }
+    public Autor getAutor() { return autor; }
+    public boolean isDisponible() { return disponible; }
+
+    public void prestar() { this.disponible = false; }
+    public void devolver() { this.disponible = true; }
+
+    @Override
+    public String toString() {
+        return titulo + " - " + autor.mostrarInfo() + (disponible ? " [Disponible]" : " [Prestado]");
+    }
+}
