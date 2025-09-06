@@ -1,0 +1,14 @@
+// Herencia de Persona
+public class Autor extends Persona {
+    private String nacionalidad;
+
+    public Autor(String nombre, String apellido, String nacionalidad) {
+        super(nombre, apellido); // uso del constructor de la superclase
+        this.nacionalidad = nacionalidad;
+    }
+
+    @Override
+    public String mostrarInfo() {
+        return super.mostrarInfo() + " (" + nacionalidad + ")";
+    }
+}
