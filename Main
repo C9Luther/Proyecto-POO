@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        // Autores
+        Autor autor1 = new Autor("Gabriel", "García Márquez", "Colombiano");
+        Autor autor2 = new Autor("Mario", "Vargas Llosa", "Peruano");
+
+        // Libros
+        Libro libro1 = new Libro("Cien Años de Soledad", autor1);
+        Libro libro2 = new Libro("La ciudad y los perros", autor2);
+
+        // Biblioteca
+        Biblioteca biblioteca = new Biblioteca("Biblioteca Central");
+        biblioteca.agregarLibro(libro1);
+        biblioteca.agregarLibro(libro2);
+        biblioteca.mostrarLibros();
+
+        // Usuario
+        Usuario usuario1 = new Usuario("Juan", "Pérez", 101);
+
+        // Préstamo
+        Prestamo prestamo = new Prestamo(libro1, usuario1);
+        System.out.println(prestamo);
+
+        biblioteca.mostrarLibros();
+
+        // Devolución
+        prestamo.devolverLibro();
+        biblioteca.mostrarLibros();
+    }
+}
