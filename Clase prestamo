@@ -1,0 +1,25 @@
+import java.util.Date;
+
+public class Prestamo {
+    // Composición: un préstamo NO existe sin un libro y un usuario
+    private Libro libro;
+    private Usuario usuario;
+    private Date fecha;
+
+    public Prestamo(Libro libro, Usuario usuario) {
+        this.libro = libro;
+        this.usuario = usuario;
+        this.fecha = new Date();
+        libro.prestar();
+    }
+
+    public void devolverLibro() {
+        libro.devolver();
+        System.out.println("Libro devuelto por " + usuario.mostrarInfo());
+    }
+
+    @Override
+    public String toString() {
+        return "Préstamo de: " + libro.getTitulo() + " a " + usuario.mostrarInfo() + " en " + fecha;
+    }
+}
