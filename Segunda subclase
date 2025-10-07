@@ -1,4 +1,3 @@
-// Herencia de Persona
 public class Usuario extends Persona {
     private int codigoUsuario;
 
@@ -11,4 +10,11 @@ public class Usuario extends Persona {
     public String mostrarInfo() {
         return "Usuario: " + super.mostrarInfo() + " | Código: " + codigoUsuario;
     }
+
+    @Override
+    public String rol() {
+        return "Lector y prestatario de libros";
+    }
 }
+
+
