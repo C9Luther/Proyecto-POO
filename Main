@@ -13,15 +13,11 @@ public class Main {
 
         Usuario usuario1 = new Usuario("Juan", "Pérez", 101);
 
-        Prestamo prestamo = new Prestamo(libro1, usuario1);
-        System.out.println(prestamo);
+        // Uso de la interfaz
+        usuario1.realizarPrestamo(libro1);
+        usuario1.devolverLibro(libro1);
 
-        biblioteca.mostrarLibros();
-
-        prestamo.devolverLibro();
-        biblioteca.mostrarLibros();
-
-        // 🧠 POLIMORFISMO
+        // Polimorfismo
         System.out.println("\n=== Demostración de Polimorfismo ===");
         Persona[] personas = { autor1, autor2, usuario1 };
         for (Persona p : personas) {
