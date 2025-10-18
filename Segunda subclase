@@ -1,4 +1,4 @@
-public class Usuario extends Persona {
+public class Usuario extends Persona implements AccionesBiblioteca {
     private int codigoUsuario;
 
     public Usuario(String nombre, String apellido, int codigoUsuario) {
@@ -14,6 +14,23 @@ public class Usuario extends Persona {
     @Override
     public String rol() {
         return "Lector y prestatario de libros";
+    }
+
+    // Métodos de la interfaz
+    @Override
+    public void realizarPrestamo(Libro libro) {
+        if (libro.isDisponible()) {
+            libro.prestar();
+            System.out.println(getNombre() + " ha prestado el libro '" + libro.getTitulo() + "'");
+        } else {
+            System.out.println("El libro '" + libro.getTitulo() + "' no está disponible.");
+        }
+    }
+
+    @Override
+    public void devolverLibro(Libro libro) {
+        libro.devolver();
+        System.out.println(getNombre() + " ha devuelto el libro '" + libro.getTitulo() + "'");
     }
 }
 
